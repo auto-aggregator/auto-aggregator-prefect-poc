@@ -16,7 +16,7 @@ async def fetch_car_ids(source_id: int) -> List[str]:
     return list(items)
 
 @flow(name="Get cars to update", log_prints=True)
-async def update_cars(source_id: int, chunk_size: int = 10) -> List[str]:
+async def update_cars(source_id: int = 1, chunk_size: int = 10) -> List[str]:
     car_ids = await fetch_car_ids(source_id)
     print(len(car_ids))
     
